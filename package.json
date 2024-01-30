@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "webpack",
     "prepare": "husky install",
-    "start": "webpack serve --open"
+    "start": "webpack serve"
   },
   "keywords": [],
   "author": "Shaun MacWilliam",

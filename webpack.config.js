@@ -6,7 +6,9 @@ module.exports = {
   mode: 'development',
   context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './index.js',
+    index: './index/index.js',
+    nav: './nav/nav.js',
+    title: './title/title.js',
   },
   devtool: 'inline-source-map',
   devServer: {
