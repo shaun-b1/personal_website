@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -11,6 +11,10 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
+    host: 'localhost',
+    port: 8080,
+    compress: false,
+    webSocketServer: false,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -43,4 +47,4 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
   },
-}
+};

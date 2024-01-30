@@ -1,4 +1,4 @@
-node_modules
-.husky
-dist
-.eslintcache
+node_modules/
+dist/
+coverage/
+.husky/
