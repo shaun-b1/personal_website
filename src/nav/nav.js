@@ -1,17 +1,21 @@
 export { nav };
 
 function nav() {
-  const nav = document.createElement('ul');
+  const nav = document.createElement('nav');
+
+  const ul = document.createElement('ul');
 
   const nav_array = ['About', 'Projects', 'Technologies'];
 
   nav_array.forEach((label) => {
-    const nav_li = document.createElement('li');
-    const nav_button = document.createElement('button');
-    nav_button.textContent = label;
-    nav_li.appendChild(nav_button);
-    nav.appendChild(nav_li);
+    const li = document.createElement('li');
+    const button = document.createElement('button');
+    button.textContent = label;
+    li.appendChild(button);
+    ul.appendChild(li);
   });
+
+  nav.appendChild(ul);
 
   return nav;
 }

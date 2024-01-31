@@ -1,19 +1,27 @@
 export { socialLinks };
 
+import '../assets/images/GitHub SVGRepo.svg';
+import '../assets/images/LinkedIn brand icon.png';
+import '../assets/images/Instagram brand icon.png';
+
 function socialLinks() {
   const socials = document.createElement('div');
 
   const socialData = [
-    { name: 'GitHub', url: 'https://github.com/shaun-b1', icon: '' },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/shaun-b1',
+      icon: '../assets/images/Github SVGRepo.svg',
+    },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/shaun-macwilliam/',
-      icon: '',
+      icon: '../assets/images/Linkedin brand icon.png',
     },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/shauny_b1/',
-      icon: '',
+      icon: '../assets/images/Instagram brand icon.png',
     },
   ];
 

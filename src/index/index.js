@@ -1,4 +1,5 @@
 console.log('hello world');
+import './styles.scss';
 import { title } from '../title/title';
 import { nav } from '../nav/nav';
 import { socialLinks } from '../social_links/social_links';
@@ -6,6 +7,7 @@ import { socialLinks } from '../social_links/social_links';
 const container = document.createElement('main');
 
 const left_column = document.createElement('div');
+
 left_column.append(title(), nav(), socialLinks());
 
 const right_column = document.createElement('div');
