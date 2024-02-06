@@ -42,5 +42,8 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "octokit": "^3.1.2"
   }
 }

@@ -6,6 +6,7 @@ import '../assets/images/Instagram brand icon.png';
 
 function socialLinks() {
   const socials = document.createElement('div');
+  socials.classList.add('left-column__social-links');
 
   const socialData = [
     {
@@ -27,10 +28,12 @@ function socialLinks() {
 
   socialData.forEach((social) => {
     const link = document.createElement('a');
+    link.classList.add('social-link');
     link.href = social.url;
     link.target = '_blank';
 
     const img = document.createElement('img');
+    img.classList.add('social-link__icon');
     img.src = social.icon;
     img.alt = `${social.name} icon`;
 
