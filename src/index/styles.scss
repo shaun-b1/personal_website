@@ -1,19 +1,25 @@
+@import './variables.scss';
+@import '../title/title.scss';
+@import '../nav/nav.scss';
 @import '../social_links/social_links.scss';
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf'),
-         url('../assets/fonts/Montserrat\ font.woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-$background-color: rgb(46, 52, 64);
-$text-color: rgb(236, 239, 244);
-$font-family: 'Montserrat', sans-serif;
 
 body {
     background-color: $background-color;
     color: $text-color;
     font-family: $font-family;
   }
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.left-column {
+    margin: 5rem 0 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

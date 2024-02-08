@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf'),
+         url('../assets/fonts/Montserrat\ font.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$background-color: rgb(46, 52, 64);
+$text-color: rgb(236, 239, 244);
+$font-family: 'Montserrat', sans-serif;

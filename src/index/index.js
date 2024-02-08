@@ -1,19 +1,21 @@
-console.log('hello world');
 import './reset.scss';
 import './styles.scss';
+
 import { title } from '../title/title';
 import { nav } from '../nav/nav';
 import { socialLinks } from '../social_links/social_links';
 
 const container = document.createElement('main');
 
-const left_column = document.createElement('div');
-left_column.classList.add('left-column');
+const leftColumn = document.createElement('div');
+leftColumn.classList.add('left-column');
+leftColumn.append(title(), nav(), socialLinks());
 
-left_column.append(title(), nav(), socialLinks());
+const rightColumn = document.createElement('div');
+rightColumn.classList.add('right-column');
 
-const right_column = document.createElement('div');
-
-container.append(left_column, right_column);
+container.append(leftColumn, rightColumn);
 
 document.body.append(container);
+
+console.log('Page initialized');
