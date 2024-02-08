@@ -4,7 +4,6 @@ import './styles.scss';
 import { title } from '../title/title';
 import { nav } from '../nav/nav';
 import { socialLinks } from '../social_links/social_links';
-import { githubTestFunction } from '../github_pins/github_pins';
 
 const container = document.createElement('main');
 
@@ -18,5 +17,3 @@ const right_column = document.createElement('div');
 container.append(left_column, right_column);
 
 document.body.append(container);
-
-githubTestFunction();

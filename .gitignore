@@ -3,3 +3,4 @@ dist/
 coverage/
 .husky/
 .DS_Store
+.env

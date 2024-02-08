@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
@@ -9,6 +10,8 @@ module.exports = {
     index: './index/index.js',
     nav: './nav/nav.js',
     title: './title/title.js',
+    social_links: './social_links/social_links.js',
+    github_pins: './github_pins/github_pins.js',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -21,6 +24,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Shaun MacWilliam Dev',
+    }),
+    new Dotenv({
+      path: './.env',
+      safe: true,
     }),
   ],
   module: {

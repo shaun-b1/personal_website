@@ -1,13 +1,35 @@
-import { Octokit } from 'octokit';
-export { githubTestFunction };
+import { GraphQLClient, gql } from 'graphql-request';
+const api_key = process.env.PERSONAL_ACCESS_TOKEN;
 
-async function githubTestFunction() {
-  const octokit = new Octokit({
-    auth: `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`,
+const query = gql`
+  query {
+    user(login: "shaun-b1") {
+      pinnedItems(first: 4, types: [REPOSITORY]) {
+        edges {
+          node {
+            ... on Repository {
+              name
+              description
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const client = new GraphQLClient('https://api.github.com/graphql', {
+  headers: {
+    Authorization: `Bearer ${api_key}`,
+  },
+});
+
+client
+  .request(query)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error('Error fetching pinned repositories:', error);
   });
-
-  const {
-    data: { login },
-  } = await octokit.rest.users.getAuthenticated();
-  console.log('Hello, %s', login);
-}

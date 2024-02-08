@@ -44,6 +44,7 @@
     "*.{js,css,md}": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "octokit": "^3.1.2"
+    "dotenv-webpack": "^8.0.1",
+    "graphql-request": "^6.1.0"
   }
 }
