@@ -21,5 +21,11 @@ function nav() {
 
   nav.appendChild(ul);
 
+  setTimeout(() => {
+    document
+      .querySelector('.left-column__nav')
+      .classList.add('left-column__nav--show');
+  }, 4000);
+
   return nav;
 }

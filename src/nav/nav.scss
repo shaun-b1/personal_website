@@ -1,3 +1,11 @@
+.left-column__nav {
+    opacity: 0;
+    transition: opacity 0.3s ease-in 3s;
+    &--show {
+        opacity: 1;
+    }
+}
+
 .item__button { 
     position: relative;
     margin: 0.6rem 0;
@@ -10,7 +18,7 @@
         left: 1.2rem;
     }
     &::before {
-        content: '\258B';
+        content: '//';
         position: absolute;
         top: 0;
         left: -1.2rem; 
@@ -19,19 +27,19 @@
     }
     &:hover::before {
         opacity: 1;
-        animation-duration: 0.5s;
-        animation-name: flash;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
+    //     // animation-duration: 0.5s;
+    //     // animation-name: flash;
+    //     // animation-iteration-count: infinite;
+    //     // animation-direction: alternate;
     }
 }
 
-@keyframes flash {
-    from {
-        opacity: 0;
-    } 
+// @keyframes flash {
+//     from {
+//         opacity: 0;
+//     } 
     
-    to {
-        opacity: 1;
-    }
-}
+//     to {
+//         opacity: 1;
+//     }
+// }

@@ -1,6 +1,11 @@
 @import '../index/variables.scss';
+@import '../index/typed.scss';
 
 .left-column__head {
     font-size: 2.5rem;
     position: relative;
+}
+
+.head__title {
+    @include typed("Hello World, \AI'm Shaun MacWilliam, \A and I'm a Web Developer", 1, (caret-speed: 1, iterations: 0 ) )
 }
