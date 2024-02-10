@@ -6,7 +6,10 @@ import '../assets/images/Instagram brand icon.png';
 
 function socialLinks() {
   const socials = document.createElement('div');
-  socials.classList.add('left-column__social-links');
+  socials.classList.add(
+    'left-column__social-links',
+    'left-column__social-links--hide',
+  );
 
   const socialData = [
     {
@@ -41,6 +44,12 @@ function socialLinks() {
 
     socials.appendChild(link);
   });
+
+  setTimeout(() => {
+    document
+      .querySelector('.left-column__social-links')
+      .classList.remove('left-column__social-links--hide');
+  }, 4000);
 
   return socials;
 }

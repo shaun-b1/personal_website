@@ -2,7 +2,7 @@ export { nav };
 
 function nav() {
   const nav = document.createElement('nav');
-  nav.classList.add('left-column__nav');
+  nav.classList.add('left-column__nav', 'left-column__nav--hide');
 
   const ul = document.createElement('ul');
   ul.classList.add('nav__list');
@@ -24,7 +24,7 @@ function nav() {
   setTimeout(() => {
     document
       .querySelector('.left-column__nav')
-      .classList.add('left-column__nav--show');
+      .classList.remove('left-column__nav--hide');
   }, 4000);
 
   return nav;
