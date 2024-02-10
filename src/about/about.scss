@@ -1,0 +1,20 @@
+@import '../index/variables.scss';
+
+.right-column__about {
+    font-size: 1rem;
+    margin-top: calc(var(--dynamic-height) + 3.2rem)
+}
+.about__paragraph {
+    &:first-child {
+        padding-bottom: 1rem;
+    }
+
+    &:last-child {
+        padding-top: 1rem;
+    }
+
+
+    &:not(:first-child):not(:last-child) {
+        padding: 1rem 0;
+    }
+}

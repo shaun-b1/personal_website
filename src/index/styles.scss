@@ -2,6 +2,7 @@
 @import '../title/title.scss';
 @import '../nav/nav.scss';
 @import '../social_links/social_links.scss';
+@import '../about/about.scss';
 
 body {
     background-color: $background-color;
@@ -21,5 +22,16 @@ main {
     margin: 5rem 0 5rem 5rem;
     display: flex;
     flex-direction: column;
+}
+
+.right-column {
+    margin: 5rem 5rem 5rem 0;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    opacity: 1;
+    transition: opacity 1s ease-in 3s;
+    &--hide{
+        opacity: 0;
+    }
 }
