@@ -1,5 +1,5 @@
 .left-column__nav {
-    margin-top: 2.6rem;
+    margin-top: $text-size;
     margin-bottom: auto;
     opacity: 1;
     transition: opacity 1s ease-in 3s;
@@ -11,19 +11,19 @@
 .item__button { 
     position: relative;
     margin: 0.6rem 0;
-    font-size: 1.3rem;
+    font-size: calc(#{$text-size} / 2);
     opacity: 0.5;
     left: 0;
     transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
     &:hover {
         opacity: 1;
-        left: 1.2rem;
+        left: calc(#{$text-size} / 2);
     }
     &::before {
         content: '//';
         position: absolute;
         top: 0;
-        left: -1.2rem; 
+        left: calc(#{$text-size} / -2);
         opacity: 0; 
         transition: opacity 0.3s ease-in-out;
     }

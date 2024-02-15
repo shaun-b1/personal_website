@@ -11,6 +11,19 @@ const query = gql`
               name
               description
               url
+              openGraphImageUrl
+              languages(first: 5) {
+                nodes {
+                  name
+                }
+              }
+              deployments(last: 1) {
+                nodes {
+                  latestStatus {
+                    environmentUrl
+                  }
+                }
+              }
             }
           }
         }
