@@ -5,6 +5,7 @@ import { title } from '../title/title';
 import { nav } from '../nav/nav';
 import { socialLinks } from '../social_links/social_links';
 import { about } from '../about/about';
+import { displayData } from '../github_pins/github_pins';
 
 const container = document.createElement('main');
 
@@ -20,6 +21,7 @@ setTimeout(() => {
   document
     .querySelector('.right-column')
     .classList.remove('right-column--hide');
+  displayData();
 }, 4000);
 
 container.append(leftColumn, rightColumn);

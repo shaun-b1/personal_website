@@ -1,4 +1,5 @@
 import { GraphQLClient, gql } from 'graphql-request';
+export { displayData, fetchData };
 const api_key = process.env.PERSONAL_ACCESS_TOKEN;
 
 const query = gql`
@@ -32,17 +33,36 @@ const query = gql`
   }
 `;
 
-const client = new GraphQLClient('https://api.github.com/graphql', {
-  headers: {
-    Authorization: `Bearer ${api_key}`,
-  },
-});
-
-client
-  .request(query)
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error('Error fetching pinned repositories:', error);
+async function fetchData() {
+  const client = new GraphQLClient('https://api.github.com/graphql', {
+    headers: {
+      Authorization: `Bearer ${api_key}`,
+    },
   });
+
+  try {
+    const data = await client.request(query);
+    return data;
+  } catch (error) {
+    console.error('Error fetching pinned repositories:', error);
+    throw error;
+  }
+}
+
+async function displayData() {
+  try {
+    const data = await fetchData();
+    console.log(data.user.pinnedItems.edges);
+    data.user.pinnedItems.edges.forEach((edge) => {
+      const { name, description, languages } = edge.node;
+
+      console.log(name);
+      console.log(description);
+      languages.nodes.forEach((language) => {
+        console.log(language.name);
+      });
+    });
+  } catch (error) {
+    console.error('Error displaying data:', error);
+  }
+}
