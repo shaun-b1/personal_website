@@ -12,12 +12,12 @@
     position: relative;
     margin: 0.6rem 0;
     font-size: calc(#{$text-size} / 2);
-    opacity: 0.5;
     left: 0;
+    opacity: 0.5;
     transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
     &:hover {
-        opacity: 1;
         left: calc(#{$text-size} / 2);
+        opacity: 1;
     }
     &::before {
         content: '//';
@@ -29,19 +29,5 @@
     }
     &:hover::before {
         opacity: 1;
-    //     // animation-duration: 0.5s;
-    //     // animation-name: flash;
-    //     // animation-iteration-count: infinite;
-    //     // animation-direction: alternate;
     }
 }
-
-// @keyframes flash {
-//     from {
-//         opacity: 0;
-//     } 
-    
-//     to {
-//         opacity: 1;
-//     }
-// }

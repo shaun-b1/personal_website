@@ -4,3 +4,4 @@ coverage/
 .husky/
 .DS_Store
 .env
+.eslintcache

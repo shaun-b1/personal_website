@@ -50,19 +50,57 @@ async function fetchData() {
 }
 
 async function displayData() {
+  const pins = document.createElement('div');
+  pins.classList.add('right-column__pins');
+
   try {
     const data = await fetchData();
     console.log(data.user.pinnedItems.edges);
     data.user.pinnedItems.edges.forEach((edge) => {
       const { name, description, languages } = edge.node;
 
-      console.log(name);
+      const pin = document.createElement('div');
+      pin.classList.add('pins__pin');
+
+      const pinTitle = document.createElement('h3');
+      pinTitle.classList.add('pin__title');
+      pinTitle.textContent = displayName(name);
+
+      const pinDescription = document.createElement('p');
+      pinDescription.classList.add('pin__description');
+      pinDescription.textContent = description;
+
+      const pinLanguages = document.createElement('div');
+      pinLanguages.classList.add('pin__languages');
+
+      languages.nodes.forEach((language) => {
+        const pinLanguage = document.createElement('p');
+        pinLanguage.classList.add('pin__language');
+        pinLanguage.textContent = language.name;
+        pinLanguages.appendChild(pinLanguage);
+      });
+
+      console.log(displayName(name));
       console.log(description);
       languages.nodes.forEach((language) => {
         console.log(language.name);
       });
+
+      pin.append(pinTitle, pinDescription, pinLanguages);
+
+      pins.appendChild(pin);
     });
   } catch (error) {
     console.error('Error displaying data:', error);
   }
+
+  return pins;
+}
+
+function displayName(name) {
+  const splitName = name.split('_');
+  const capitalisedName = splitName.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+  return capitalisedName.join(' ');
 }

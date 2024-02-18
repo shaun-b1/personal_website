@@ -16,23 +16,33 @@ main {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr;
 }
 
 .left-column {
-    margin: 5rem 0 5rem 5rem;
     display: flex;
     flex-direction: column;
+    top: 0;
+    bottom: 0;
+    margin: 3rem 0 3rem 3rem;
+    padding: 2rem 0 2rem 2rem;
 }
 
 .right-column {
-    margin: 5rem 5rem 5rem 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 3rem 3rem 3rem 0;
+    padding: 2rem 2rem 2rem 0;
+    overflow-y: overlay;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     opacity: 1;
     transition: opacity 1s ease-in 3s;
-    &--hide{
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &--hide {
         opacity: 0;
     }
 }

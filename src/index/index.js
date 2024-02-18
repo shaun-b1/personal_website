@@ -15,17 +15,19 @@ leftColumn.append(title(), nav(), socialLinks());
 
 const rightColumn = document.createElement('div');
 rightColumn.classList.add('right-column', 'right-column--hide');
-rightColumn.appendChild(about());
+
+async function renderData() {
+  const dataElement = await displayData();
+  rightColumn.append(about(), dataElement);
+  container.append(leftColumn, rightColumn);
+  document.body.append(container);
+}
 
 setTimeout(() => {
   document
     .querySelector('.right-column')
     .classList.remove('right-column--hide');
-  displayData();
 }, 4000);
 
-container.append(leftColumn, rightColumn);
-
-document.body.append(container);
-
+renderData();
 console.log('Page initialized');

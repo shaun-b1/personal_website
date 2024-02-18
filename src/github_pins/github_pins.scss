@@ -1,2 +1,41 @@
-@import '../index/variables.scss'
+@import '../index/variables.scss';
 
+.right-column__pins {
+    display: flex;
+    flex-direction: column;
+    margin: $text-size 0;
+}
+
+.pins__pin {
+    margin: calc(#{$text-size} / 2) 0;
+    border: 2px solid rgba($text-color, 0.2);
+    padding: calc(#{$text-size} / 2) ;
+    border-radius: 10px;
+    background-color: rgba(39, 39, 39, 0.1);
+    backdrop-filter: blur(60px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    & > * {
+        padding: 1rem;
+    }
+}
+
+.pin__title {
+    font-size: calc(#{$text-size} / 2);
+}
+
+.pin__languages {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;    
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.pin__language {
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    padding: calc(#{$text-size} / 6) calc(#{$text-size} / 2);
+    background-color: $highlight-color;
+}
