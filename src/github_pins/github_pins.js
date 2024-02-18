@@ -57,10 +57,18 @@ async function displayData() {
     const data = await fetchData();
     console.log(data.user.pinnedItems.edges);
     data.user.pinnedItems.edges.forEach((edge) => {
-      const { name, description, languages } = edge.node;
+      const { name, description, languages, openGraphImageUrl } = edge.node;
 
       const pin = document.createElement('div');
       pin.classList.add('pins__pin');
+
+      const pinImage = document.createElement('img');
+      pinImage.classList.add('pin__image');
+      pinImage.src = openGraphImageUrl;
+      pinImage.alt = `${name} screenshot`;
+
+      const pinContent = document.createElement('div');
+      pinContent.classList.add('pin__content');
 
       const pinTitle = document.createElement('h3');
       pinTitle.classList.add('pin__title');
@@ -80,13 +88,15 @@ async function displayData() {
         pinLanguages.appendChild(pinLanguage);
       });
 
-      console.log(displayName(name));
-      console.log(description);
-      languages.nodes.forEach((language) => {
-        console.log(language.name);
-      });
+      // console.log(displayName(name));
+      // console.log(description);
+      // languages.nodes.forEach((language) => {
+      //   console.log(language.name);
+      // });
 
-      pin.append(pinTitle, pinDescription, pinLanguages);
+      pinContent.append(pinTitle, pinDescription, pinLanguages);
+
+      pin.append(pinImage, pinContent);
 
       pins.appendChild(pin);
     });
