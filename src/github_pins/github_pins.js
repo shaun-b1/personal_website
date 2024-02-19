@@ -57,7 +57,8 @@ async function displayData() {
     const data = await fetchData();
     console.log(data.user.pinnedItems.edges);
     data.user.pinnedItems.edges.forEach((edge) => {
-      const { name, description, languages, openGraphImageUrl } = edge.node;
+      const { name, description, languages, openGraphImageUrl, deployments } =
+        edge.node;
 
       const pin = document.createElement('div');
       pin.classList.add('pins__pin');
@@ -88,13 +89,18 @@ async function displayData() {
         pinLanguages.appendChild(pinLanguage);
       });
 
-      // console.log(displayName(name));
-      // console.log(description);
-      // languages.nodes.forEach((language) => {
-      //   console.log(language.name);
-      // });
+      const pinLiveUrl = document.createElement('a');
+      pinLiveUrl.classList.add('pin__live-url');
+      pinLiveUrl.href = deployments.nodes[0].latestStatus.environmentUrl;
+      pinLiveUrl.target = '_blank';
 
-      pinContent.append(pinTitle, pinDescription, pinLanguages);
+      const liveUrlButton = document.createElement('button');
+      liveUrlButton.classList.add('live-url__button');
+      liveUrlButton.textContent = 'See it live';
+
+      pinLiveUrl.appendChild(liveUrlButton);
+
+      pinContent.append(pinTitle, pinDescription, pinLanguages, pinLiveUrl);
 
       pin.append(pinImage, pinContent);
 
