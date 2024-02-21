@@ -1,8 +1,8 @@
 @import '../index/variables.scss';
 
 .right-column__about {
-    font-size: 1rem;
-    margin-top: calc(var(--dynamic-height) + calc(#{$text-size} * 1.5))
+    font-size: calc(#{$text-size} / 2.3);
+    // padding-top: calc(var(--dynamic-height))
 }
 .about__paragraph {
     &:first-child {

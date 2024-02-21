@@ -11,38 +11,45 @@ body {
     font-family: $font-family;
   }
 
-main {
+.container {
     width: 100vw;
     height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    padding: 0 6rem;
+    justify-content: space-between;
+    gap: 1rem;
+    box-sizing: border-box;
 }
 
 .left-column {
+    position: sticky;
     display: flex;
     flex-direction: column;
+    width: 45%;
+    max-height: 100vh;
     top: 0;
-    bottom: 0;
-    margin: 3rem 0 3rem 3rem;
-    padding: 2rem 0 2rem 2rem;
+    padding: 5rem 0;
 }
 
 .right-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 3rem 3rem 3rem 0;
-    padding: 2rem 2rem 2rem 0.5rem;
-    overflow-y: overlay;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    padding: 5rem 10px;
+    width: 50%;
     opacity: 1;
     transition: opacity 1s ease-in 3s;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: overlay;
+    scroll-behavior: smooth;
     &::-webkit-scrollbar {
         display: none;
     }
     &--hide {
         opacity: 0;
+    }
+    & > * {
+        margin-bottom: calc(#{$text-size} * 3);
     }
 }

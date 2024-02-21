@@ -1,7 +1,7 @@
 export { title };
 
 function title() {
-  const head = document.createElement('header');
+  const head = document.createElement('div');
   head.classList.add('left-column__header');
 
   const element = document.createElement('h1');

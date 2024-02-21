@@ -50,8 +50,9 @@ async function fetchData() {
 }
 
 async function displayData() {
-  const pins = document.createElement('div');
+  const pins = document.createElement('section');
   pins.classList.add('right-column__pins');
+  pins.id = 'pins';
 
   try {
     const data = await fetchData();
@@ -93,12 +94,7 @@ async function displayData() {
       pinLiveUrl.classList.add('pin__live-url');
       pinLiveUrl.href = deployments.nodes[0].latestStatus.environmentUrl;
       pinLiveUrl.target = '_blank';
-
-      const liveUrlButton = document.createElement('button');
-      liveUrlButton.classList.add('live-url__button');
-      liveUrlButton.textContent = 'See it live';
-
-      pinLiveUrl.appendChild(liveUrlButton);
+      pinLiveUrl.textContent = 'See it live';
 
       pinContent.append(pinTitle, pinDescription, pinLanguages, pinLiveUrl);
 

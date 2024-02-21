@@ -8,14 +8,16 @@ function nav() {
   ul.classList.add('nav__list');
 
   const nav_array = ['About', 'Projects', 'Technologies'];
+  const hrefs = ['#about', '#pins'];
 
-  nav_array.forEach((label) => {
+  nav_array.forEach((label, index) => {
     const li = document.createElement('li');
     li.classList.add('list__item');
-    const button = document.createElement('button');
-    button.classList.add('item__button');
-    button.textContent = label;
-    li.appendChild(button);
+    const link = document.createElement('a');
+    link.classList.add('item__link');
+    link.textContent = label;
+    link.setAttribute('href', hrefs[index]);
+    li.appendChild(link);
     ul.appendChild(li);
   });
 
@@ -29,3 +31,19 @@ function nav() {
 
   return nav;
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute('id');
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`a[href]="#${id}"]`).classList.add('active');
+      } else {
+        document.querySelector(`a[href]="#${id}"]`).classList.remove('active');
+      }
+    });
+  });
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
+});
