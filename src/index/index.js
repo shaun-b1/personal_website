@@ -5,7 +5,7 @@ import { title } from '../title/title';
 import { nav } from '../nav/nav';
 import { socialLinks } from '../social_links/social_links';
 import { about } from '../about/about';
-import { displayData } from '../github_pins/github_pins';
+import { displayData } from '../display_data/display_data';
 
 const container = document.createElement('div');
 container.classList.add('container');
