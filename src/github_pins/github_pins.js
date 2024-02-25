@@ -1,5 +1,4 @@
 import { GraphQLClient, gql } from 'graphql-request';
-export { fetchData };
 const api_key = process.env.PERSONAL_ACCESS_TOKEN;
 
 const query = gql`
@@ -33,7 +32,7 @@ const query = gql`
   }
 `;
 
-async function fetchData() {
+export async function fetchData() {
   const client = new GraphQLClient('https://api.github.com/graphql', {
     headers: {
       Authorization: `Bearer ${api_key}`,

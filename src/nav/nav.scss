@@ -1,7 +1,6 @@
 @import '../index/variables.scss';
 
 .left-column__nav {
-    margin-top: $text-size;
     margin-bottom: auto;
     opacity: 1;
     transition: opacity 1s ease-in 3s;
@@ -11,8 +10,8 @@
 }
 
 .list__item {
-    margin: calc(#{$text-size} / 2) 0;
-    font-size: calc(#{$text-size} / 2);
+    margin-bottom: $column-element-margin;
+    font-size: $h3-size;
 }
 
 .item__link { 
@@ -25,14 +24,14 @@
         content: '//';
         position: absolute;
         top: 0.15rem;
-        left: calc(#{$text-size} / -2);
+        left: calc(#{$h3-size} * -1);
         opacity: 0; 
         transition: opacity 0.3s ease-in-out;
     }
 
     &:hover, 
     &--active {
-        left: calc(#{$text-size} / 2);
+        left: $h3-size;
         opacity: 1;
         &::before {
             opacity: 1;

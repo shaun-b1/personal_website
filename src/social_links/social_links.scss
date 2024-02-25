@@ -1,5 +1,4 @@
 .left-column__social-links {
-    margin-top: auto;
     opacity: 1;
     transition: opacity 1s ease-in 3s;
     &--hide {
@@ -9,8 +8,8 @@
 
 .social-link__icon {
     filter: invert(100%);
-    height: 2rem;
-    width: 2rem;
+    height: 2.6rem;
+    width: 2.6rem;
     padding: .5rem;
     opacity: 0.5;
     transition: opacity 0.3s ease-in-out;

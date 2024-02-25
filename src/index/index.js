@@ -6,6 +6,7 @@ import { nav } from '../nav/nav';
 import { socialLinks } from '../social_links/social_links';
 import { about } from '../about/about';
 import { displayData } from '../display_data/display_data';
+import { listTechnologies } from '../technologies/technologies';
 
 const container = document.createElement('div');
 container.classList.add('container');
@@ -19,7 +20,7 @@ rightColumn.classList.add('right-column', 'right-column--hide');
 
 async function renderData() {
   const dataElement = await displayData();
-  rightColumn.append(about(), dataElement);
+  rightColumn.append(about(), dataElement, listTechnologies());
   container.append(leftColumn, rightColumn);
   document.body.append(container);
 
@@ -39,7 +40,7 @@ async function renderData() {
         }
       });
     },
-    { threshold: 0.35 },
+    { threshold: 0.5 },
   );
 
   document.querySelectorAll('section[id]').forEach((section) => {

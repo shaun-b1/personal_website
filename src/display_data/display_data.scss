@@ -7,7 +7,7 @@
 
 .pins__pin {
     position: relative;
-    margin-bottom: calc(#{$text-size} * 1.5) ;
+    margin-bottom: $column-element-margin ;
     border: 1px solid rgba($text-color, 0.1);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -29,12 +29,13 @@
 .pin__content {
     position: relative;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    font-size: $p-size;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
+    padding: $column-element-margin 2.5rem;
     z-index: 0;
-    padding: $text-size;
     background-color: rgba(39, 39, 39, 0.3);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -43,13 +44,13 @@
     &:hover{
         opacity: 1;
     }
-    // & > * {
-    //     padding: 1rem;
-    // }
+}
+.pin__title{
+    margin-bottom: calc(#{$column-element-margin} / 2);
 }
 
 .title__link { 
-    font-size: calc(#{$text-size} / 2);
+    font-size: $h3-size;
 
     &::after {
         content: '';
@@ -57,10 +58,10 @@
         margin-left: 0.4rem;
         margin-top: 0.35rem;
         background-image: url('../assets/images/Arrow\ Up\ Right\ Icon.svg');
-        background-size: calc(#{$text-size} / 3) calc(#{$text-size} / 3);
+        background-size: 1rem 1rem;
         filter: invert(95%);
-        height: calc(#{$text-size} / 3);
-        width: calc(#{$text-size} / 3);
+        height: 1rem;
+        width: 1rem;
         transition: transform 0.3s ease-in-out;
     }
 
@@ -71,41 +72,24 @@
     }
 }
 
+.pin__description {
+    margin-bottom: $column-element-margin;
+}
+
 .pin__languages {
+    align-self: flex-end;
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;    
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .pin__language {
-    margin-right: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    // margin-right: 1rem;
     border: 1px solid rgba($text-color, 0.1);
-    padding: calc(#{$text-size} / 4.5) calc(#{$text-size} / 1.5);
+    padding: 0.5rem 2rem;
     background-color: rgba(39, 39, 39, 0.6);
     backdrop-filter: blur(30px);
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.pin__live-url {
-
-    align-self: center;
-    // margin-top: 0.5rem;
-    // margin-bottom: 0.5rem;
-    border: 1px solid rgba($text-color, 0.1);
-    padding: calc(#{$text-size} / 4.5) calc(#{$text-size} / 1.5);
-    background-color: rgba($highlight-color, 0.8);
-    backdrop-filter: blur(30px);
-    border-radius: 25px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    color: $text-color;
-    transition: background-color 0.3s ease-in, padding 0.3s ease-in-out;
-    &:hover {
-        background-color: rgba($highlight-color, 0.4);
-        padding: calc(#{$text-size} / 4.5) calc(#{$text-size} * 1.5);
-    }
 }

@@ -1,0 +1,38 @@
+.right-column__technologies {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.technologies__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: $column-element-margin;
+}
+
+.technologies__title{
+    font-size: $h3-size;
+    line-height: 1.3rem;
+    margin-bottom: $column-element-margin;
+}
+
+.grid__tile {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile__image{
+    filter: invert(100%);
+    height: 2.6rem;
+    width: 2.6rem;
+    padding: 0.5rem;
+}
+
+.tile__text{
+    text-align: center;
+    padding: 0.5rem;
+}

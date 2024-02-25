@@ -11,7 +11,9 @@ module.exports = {
     nav: './nav/nav.js',
     title: './title/title.js',
     social_links: './social_links/social_links.js',
+    about: './about/about.js',
     github_pins: './github_pins/github_pins.js',
+    technologies: './technologies/technologies.js',
   },
   devtool: 'inline-source-map',
   devServer: {

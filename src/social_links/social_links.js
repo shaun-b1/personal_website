@@ -1,10 +1,8 @@
-export { socialLinks };
-
 import '../assets/images/GitHub SVGRepo.svg';
 import '../assets/images/LinkedIn brand icon.png';
 import '../assets/images/Instagram brand icon.png';
 
-function socialLinks() {
+export function socialLinks() {
   const socials = document.createElement('div');
   socials.classList.add(
     'left-column__social-links',

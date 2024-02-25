@@ -1,6 +1,4 @@
-export { about };
-
-function about() {
+export function about() {
   const about = document.createElement('section');
   about.classList.add('right-column__about');
   about.id = 'about';

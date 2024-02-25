@@ -1,20 +1,10 @@
 @import '../index/variables.scss';
 
 .right-column__about {
-    font-size: calc(#{$text-size} / 2.3);
+    font-size: $p-size;
+    line-height: 1.4rem;
     // padding-top: calc(var(--dynamic-height))
 }
 .about__paragraph {
-    &:first-child {
-        padding-bottom: 1rem;
-    }
-
-    &:last-child {
-        padding-top: 1rem;
-    }
-
-
-    &:not(:first-child):not(:last-child) {
-        padding: 1rem 0;
-    }
+    margin-bottom: $column-element-margin;
 }

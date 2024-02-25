@@ -1,23 +1,16 @@
 import { fetchData } from '../github_pins/github_pins';
-export { displayData };
 
-async function displayData() {
+export async function displayData() {
   const pins = document.createElement('section');
   pins.classList.add('right-column__pins');
-  pins.id = 'pins';
+  pins.id = 'projects';
 
   try {
     const data = await fetchData();
     console.log(data.user.pinnedItems.edges);
     data.user.pinnedItems.edges.forEach((edge) => {
-      const {
-        name,
-        description,
-        languages,
-        openGraphImageUrl,
-        deployments,
-        url,
-      } = edge.node;
+      const { name, description, languages, openGraphImageUrl, deployments } =
+        edge.node;
 
       const pin = document.createElement('div');
       pin.classList.add('pins__pin');
@@ -36,7 +29,7 @@ async function displayData() {
       const titleLink = document.createElement('a');
       titleLink.classList.add('title__link');
       titleLink.textContent = displayName(name);
-      titleLink.href = url;
+      titleLink.href = deployments.nodes[0].latestStatus.environmentUrl;
       titleLink.target = '_blank';
 
       pinTitle.appendChild(titleLink);
@@ -55,13 +48,13 @@ async function displayData() {
         pinLanguages.appendChild(pinLanguage);
       });
 
-      const pinLiveUrl = document.createElement('a');
-      pinLiveUrl.classList.add('pin__live-url');
-      pinLiveUrl.href = deployments.nodes[0].latestStatus.environmentUrl;
-      pinLiveUrl.target = '_blank';
-      pinLiveUrl.textContent = 'See it live';
+      // const pinLiveUrl = document.createElement('a');
+      // pinLiveUrl.classList.add('pin__live-url');
+      // pinLiveUrl.href = deployments.nodes[0].latestStatus.environmentUrl;
+      // pinLiveUrl.target = '_blank';
+      // pinLiveUrl.textContent = 'See it live';
 
-      pinContent.append(pinTitle, pinDescription, pinLanguages, pinLiveUrl);
+      pinContent.append(pinTitle, pinDescription, pinLanguages);
 
       pin.append(pinImage, pinContent);
 

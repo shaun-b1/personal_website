@@ -1,6 +1,4 @@
-export { title };
-
-function title() {
+export function title() {
   const head = document.createElement('div');
   head.classList.add('left-column__header');
 

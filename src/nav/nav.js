@@ -1,6 +1,4 @@
-export { nav };
-
-function nav() {
+export function nav() {
   const nav = document.createElement('nav');
   nav.classList.add('left-column__nav', 'left-column__nav--hide');
 
@@ -8,7 +6,7 @@ function nav() {
   ul.classList.add('nav__list');
 
   const nav_array = ['About', 'Projects', 'Technologies'];
-  const hrefs = ['#about', '#pins'];
+  const hrefs = ['#about', '#projects', '#technologies'];
 
   nav_array.forEach((label, index) => {
     const li = document.createElement('li');
