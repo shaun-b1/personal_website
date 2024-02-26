@@ -32,6 +32,7 @@ export function socialLinks() {
     link.classList.add('social-link');
     link.href = social.url;
     link.target = '_blank';
+    link.setAttribute('aria-label', `My ${social.name} (opens in a new tab)`);
 
     const img = document.createElement('img');
     img.classList.add('social-link__icon');

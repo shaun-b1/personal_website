@@ -77,6 +77,7 @@ export function listTechnologies() {
     const tileImage = document.createElement('img');
     tileImage.classList.add('tile__image');
     tileImage.src = technology.icon;
+    tileImage.alt = `${technology.name} icon`;
 
     const tileText = document.createElement('p');
     tileText.classList.add('tile__text');

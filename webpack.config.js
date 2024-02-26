@@ -26,6 +26,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Shaun MacWilliam Dev',
+      template: './index/index.html',
+      filename: 'index.html',
     }),
     new Dotenv({
       path: './.env',
