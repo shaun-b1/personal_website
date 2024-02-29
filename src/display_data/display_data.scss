@@ -3,11 +3,21 @@
 .right-column__pins {
     display: flex;
     flex-direction: column;
+    gap: $column-element-margin;
 }
 
-.pins__pin {
+.pins__title {
+    font-size: $h3-size;
+}
+
+.pins__list {
+    display: flex;
+    flex-direction: column;
+    gap: $column-element-margin;
+}
+
+.list__pin {
     position: relative;
-    margin-bottom: $column-element-margin ;
     border: 1px solid rgba($text-color, 0.1);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -30,10 +40,7 @@
     position: relative;
     display: flex;
     font-size: $p-size;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex-direction: column;
     padding: $column-element-margin 2.5rem;
     z-index: 0;
     background-color: rgba(39, 39, 39, 0.3);
@@ -52,24 +59,18 @@
 .title__link { 
     font-size: $h3-size;
 
-    &::after {
-        content: '';
-        position: absolute;
-        margin-left: 0.4rem;
-        margin-top: 0.35rem;
-        background-image: url('../assets/images/Arrow\ Up\ Right\ Icon.svg');
-        background-size: 1rem 1rem;
-        filter: invert(95%);
-        height: 1rem;
-        width: 1rem;
-        transition: transform 0.3s ease-in-out;
+    &:hover > .link__arrow {
+        transform: translate(0.25rem, -0.25rem);
     }
+}
 
-    &:hover {
-        &::after {
-            transform: translate(0.25rem, -0.25rem);
-        }
-    }
+.link__arrow {
+    height: 1.5rem;
+    width: 1.5rem;
+    filter: invert(95%);
+    position: relative;
+    top: 0.6rem;
+    transition: transform 0.3s ease-in-out;
 }
 
 .pin__description {
@@ -77,19 +78,22 @@
 }
 
 .pin__languages {
-    align-self: flex-end;
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
 .pin__language {
-    // margin-right: 1rem;
     border: 1px solid rgba($text-color, 0.1);
     padding: 0.5rem 2rem;
-    background-color: rgba(39, 39, 39, 0.6);
+    background-color: rgba($highlight-color, 0.4);
     backdrop-filter: blur(30px);
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 1024px) {
+    .pins__title {
+        display: none;
+    }
 }

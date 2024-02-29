@@ -2,6 +2,17 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: $column-element-margin;
+}
+
+.technologies__title {
+    font-size: $h3-size;
+    line-height: 1.3rem;
+}
+
+.technologies__subtitle{
+    font-size: $h3-size;
+    line-height: 1.3rem;
 }
 
 .technologies__grid {
@@ -9,12 +20,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     row-gap: $column-element-margin;
-}
-
-.technologies__title{
-    font-size: $h3-size;
-    line-height: 1.3rem;
-    margin-bottom: $column-element-margin;
 }
 
 .grid__tile {
@@ -35,4 +40,10 @@
 .tile__text{
     text-align: center;
     padding: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+    .technologies__title {
+        display: none;
+    }
 }

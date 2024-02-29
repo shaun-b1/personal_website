@@ -1,10 +1,23 @@
 @import '../index/variables.scss';
 
 .right-column__about {
+    // padding-top: calc(var(--dynamic-height))
+    display: flex;
+    flex-direction: column;
+    gap: $column-element-margin
+}
+
+.about__title {
+    font-size: $h3-size;
+}
+
+.about__para {
     font-size: $p-size;
     line-height: 1.4rem;
-    // padding-top: calc(var(--dynamic-height))
 }
-.about__paragraph {
-    margin-bottom: $column-element-margin;
+
+@media (min-width: 1024px) {
+    .about__title {
+        display: none;
+    }
 }

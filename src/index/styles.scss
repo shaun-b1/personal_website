@@ -16,7 +16,8 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    padding: 0 6rem;
+    padding-left: $main-horizontal-margin;
+    padding-right: $main-horizontal-margin;
     justify-content: space-between;
     gap: 1rem;
     box-sizing: border-box;
@@ -26,17 +27,20 @@ body {
     position: sticky;
     display: flex;
     flex-direction: column;
+    gap: $column-section-margin;
     width: 45%;
     max-height: 100vh;
     top: 0;
-    padding: 5rem 0;
+    padding-top: $main-vertical-spacing;
+    padding-bottom: $main-vertical-spacing;
 }
 
 .right-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5rem 10px;
+    gap: $column-section-margin;
+    padding: $main-vertical-spacing 10px;
     width: 50%;
     opacity: 1;
     transition: opacity 1s ease-in-out 3s;
@@ -50,7 +54,27 @@ body {
     &--hide {
         opacity: 0;
     }
-    & > * {
-        margin-bottom: $column-section-margin;
+}
+
+@media (max-width: 1023px) {
+    .container {
+        width: auto;
+        height: auto;
+        padding: $main-vertical-spacing $main-horizontal-margin;
+        flex-direction: column;
+        gap: $column-section-margin;
+    }
+
+    .left-column {
+        position: relative;
+        width: auto;
+        max-height: none;
+        padding: 0;
+    }
+
+    .right-column {
+        padding: 0 10px;
+        width: auto;
+        overflow-y: visible;
     }
 }

@@ -3,11 +3,16 @@ import '../assets/images/LinkedIn brand icon.png';
 import '../assets/images/Instagram brand icon.png';
 
 export function socialLinks() {
-  const socials = document.createElement('div');
+  const socials = document.createElement('section');
   socials.classList.add(
     'left-column__social-links',
     'left-column__social-links--hide',
   );
+
+  const socialsList = document.createElement('ul');
+  socialsList.classList.add('social-links__list');
+
+  socials.appendChild(socialsList);
 
   const socialData = [
     {
@@ -28,6 +33,9 @@ export function socialLinks() {
   ];
 
   socialData.forEach((social) => {
+    const linkList = document.createElement('li');
+    linkList.classList.add('socials__list-item');
+
     const link = document.createElement('a');
     link.classList.add('social-link');
     link.href = social.url;
@@ -41,7 +49,9 @@ export function socialLinks() {
 
     link.appendChild(img);
 
-    socials.appendChild(link);
+    linkList.appendChild(link);
+
+    socialsList.appendChild(linkList);
   });
 
   setTimeout(() => {

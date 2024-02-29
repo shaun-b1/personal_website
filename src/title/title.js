@@ -1,5 +1,5 @@
 export function title() {
-  const head = document.createElement('div');
+  const head = document.createElement('section');
   head.classList.add('left-column__header');
 
   const element = document.createElement('h1');

@@ -6,11 +6,16 @@
     }
 }
 
+.social-links__list {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .social-link__icon {
     filter: invert(100%);
-    height: 2.6rem;
-    width: 2.6rem;
-    padding: .5rem;
+    height: 3rem;
+    width: 3rem;
+    margin-right: $column-element-margin;
     opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
     &:hover {

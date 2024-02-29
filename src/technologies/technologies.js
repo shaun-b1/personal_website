@@ -61,17 +61,22 @@ export function listTechnologies() {
   const technologies = document.createElement('section');
   technologies.classList.add('right-column__technologies');
   technologies.id = 'technologies';
+  technologies.setAttribute('aria-label', 'Technologies I have worked with');
 
-  const technologiesTitle = document.createElement('h3');
+  const technologiesTitle = document.createElement('h2');
   technologiesTitle.classList.add('technologies__title');
-  technologiesTitle.textContent =
+  technologiesTitle.textContent = 'Technologies';
+
+  const technologiesSubtitle = document.createElement('h3');
+  technologiesSubtitle.classList.add('technologies__subtitle');
+  technologiesSubtitle.textContent =
     'Below are just a few of the languages, frameworks, and tools that I have experience in:';
 
-  const technologiesGrid = document.createElement('div');
+  const technologiesGrid = document.createElement('ul');
   technologiesGrid.classList.add('technologies__grid');
 
   technologyData.forEach((technology) => {
-    const technologiesTile = document.createElement('div');
+    const technologiesTile = document.createElement('li');
     technologiesTile.classList.add('grid__tile');
 
     const tileImage = document.createElement('img');
@@ -87,7 +92,11 @@ export function listTechnologies() {
     technologiesGrid.appendChild(technologiesTile);
   });
 
-  technologies.append(technologiesTitle, technologiesGrid);
+  technologies.append(
+    technologiesTitle,
+    technologiesSubtitle,
+    technologiesGrid,
+  );
 
   return technologies;
 }

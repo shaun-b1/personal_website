@@ -1,9 +1,20 @@
+import '../assets/images/Arrow Up Right Icon.svg';
 import { fetchData } from '../github_pins/github_pins';
 
 export async function displayData() {
   const pins = document.createElement('section');
   pins.classList.add('right-column__pins');
   pins.id = 'projects';
+  pins.setAttribute('aria-label', 'A selection of projects from my github');
+
+  const pinsTitle = document.createElement('h2');
+  pinsTitle.classList.add('pins__title');
+  pinsTitle.textContent = 'Projects';
+
+  const pinsList = document.createElement('ul');
+  pinsList.classList.add('pins__list');
+
+  pins.append(pinsTitle, pinsList);
 
   try {
     const data = await fetchData();
@@ -12,8 +23,8 @@ export async function displayData() {
       const { name, description, languages, openGraphImageUrl, deployments } =
         edge.node;
 
-      const pin = document.createElement('div');
-      pin.classList.add('pins__pin');
+      const pin = document.createElement('li');
+      pin.classList.add('list__pin');
 
       const pinImage = document.createElement('img');
       pinImage.classList.add('pin__image');
@@ -31,6 +42,17 @@ export async function displayData() {
       titleLink.textContent = displayName(name);
       titleLink.href = deployments.nodes[0].latestStatus.environmentUrl;
       titleLink.target = '_blank';
+      titleLink.setAttribute(
+        'aria-label',
+        `${displayName(name)} (opens in a new tab)`,
+      );
+
+      const arrow = document.createElement('img');
+      arrow.src = '../assets/images/Arrow Up Right Icon.svg';
+      arrow.classList.add('link__arrow');
+      arrow.setAttribute('aria-hidden', 'true');
+
+      titleLink.appendChild(arrow);
 
       pinTitle.appendChild(titleLink);
 
@@ -48,17 +70,11 @@ export async function displayData() {
         pinLanguages.appendChild(pinLanguage);
       });
 
-      // const pinLiveUrl = document.createElement('a');
-      // pinLiveUrl.classList.add('pin__live-url');
-      // pinLiveUrl.href = deployments.nodes[0].latestStatus.environmentUrl;
-      // pinLiveUrl.target = '_blank';
-      // pinLiveUrl.textContent = 'See it live';
-
       pinContent.append(pinTitle, pinDescription, pinLanguages);
 
       pin.append(pinImage, pinContent);
 
-      pins.appendChild(pin);
+      pinsList.appendChild(pin);
     });
   } catch (error) {
     console.error('Error displaying data:', error);

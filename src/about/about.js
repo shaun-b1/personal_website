@@ -2,6 +2,13 @@ export function about() {
   const about = document.createElement('section');
   about.classList.add('right-column__about');
   about.id = 'about';
+  about.setAttribute('aria-label', 'About me section');
+
+  const aboutTitle = document.createElement('h2');
+  aboutTitle.classList.add('about__title');
+  aboutTitle.textContent = 'About';
+
+  about.appendChild(aboutTitle);
 
   const paragraphs = [
     "I first began building things on the internet when I was in school. Initially I would put together forums for my online gaming groups; a job that I would always volunteer for. I'd stay up late at night and wake up early before school to fix any little bugbear I could find.",
@@ -10,11 +17,11 @@ export function about() {
   ];
 
   paragraphs.forEach((paragraph) => {
-    const para = document.createElement('p');
-    para.classList.add('about__paragraph');
-    para.textContent = paragraph;
+    const aboutPara = document.createElement('p');
+    aboutPara.classList.add('about__paragraph');
+    aboutPara.textContent = paragraph;
 
-    about.appendChild(para);
+    about.appendChild(aboutPara);
   });
 
   setTimeout(() => {
