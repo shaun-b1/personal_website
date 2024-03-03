@@ -25,7 +25,7 @@ export function about() {
   });
 
   setTimeout(() => {
-    const targetElement = document.querySelector('.header__title');
+    const targetElement = document.querySelector('.left-column__title');
     const height = targetElement.offsetHeight;
     document.documentElement.style.setProperty(
       '--dynamic-height',

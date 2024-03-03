@@ -67,7 +67,7 @@ export function listTechnologies() {
   technologiesTitle.classList.add('technologies__title');
   technologiesTitle.textContent = 'Technologies';
 
-  const technologiesSubtitle = document.createElement('h3');
+  const technologiesSubtitle = document.createElement('p');
   technologiesSubtitle.classList.add('technologies__subtitle');
   technologiesSubtitle.textContent =
     'Below are just a few of the languages, frameworks, and tools that I have experience in:';

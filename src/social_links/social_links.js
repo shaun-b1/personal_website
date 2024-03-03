@@ -33,25 +33,28 @@ export function socialLinks() {
   ];
 
   socialData.forEach((social) => {
-    const linkList = document.createElement('li');
-    linkList.classList.add('socials__list-item');
+    const socialsListItem = document.createElement('li');
+    socialsListItem.classList.add('social__item');
 
-    const link = document.createElement('a');
-    link.classList.add('social-link');
-    link.href = social.url;
-    link.target = '_blank';
-    link.setAttribute('aria-label', `My ${social.name} (opens in a new tab)`);
+    const socialLink = document.createElement('a');
+    socialLink.classList.add('social__link');
+    socialLink.href = social.url;
+    socialLink.target = '_blank';
+    socialLink.setAttribute(
+      'aria-label',
+      `My ${social.name} (opens in a new tab)`,
+    );
 
-    const img = document.createElement('img');
-    img.classList.add('social-link__icon');
-    img.src = social.icon;
-    img.alt = `${social.name} icon`;
+    const socialImage = document.createElement('img');
+    socialImage.classList.add('social__icon');
+    socialImage.src = social.icon;
+    socialImage.alt = `${social.name} icon`;
 
-    link.appendChild(img);
+    socialLink.appendChild(socialImage);
 
-    linkList.appendChild(link);
+    socialsListItem.appendChild(socialLink);
 
-    socialsList.appendChild(linkList);
+    socialsList.appendChild(socialsListItem);
   });
 
   setTimeout(() => {

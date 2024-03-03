@@ -2,24 +2,24 @@ export function nav() {
   const nav = document.createElement('nav');
   nav.classList.add('left-column__nav', 'left-column__nav--hide');
 
-  const ul = document.createElement('ul');
-  ul.classList.add('nav__list');
+  const navList = document.createElement('ul');
+  navList.classList.add('nav__list');
 
   const nav_array = ['About', 'Projects', 'Technologies'];
   const hrefs = ['#about', '#projects', '#technologies'];
 
   nav_array.forEach((label, index) => {
-    const li = document.createElement('li');
-    li.classList.add('list__item');
-    const link = document.createElement('a');
-    link.classList.add('item__link');
-    link.textContent = label;
-    link.setAttribute('href', hrefs[index]);
-    li.appendChild(link);
-    ul.appendChild(li);
+    const navItem = document.createElement('li');
+    navItem.classList.add('nav__item');
+    const navLink = document.createElement('a');
+    navLink.classList.add('nav__link');
+    navLink.textContent = label;
+    navLink.setAttribute('href', hrefs[index]);
+    navItem.appendChild(navLink);
+    navList.appendChild(navItem);
   });
 
-  nav.appendChild(ul);
+  nav.appendChild(navList);
 
   setTimeout(() => {
     document

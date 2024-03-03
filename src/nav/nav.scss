@@ -9,12 +9,12 @@
     }
 }
 
-.list__item {
+.nav__item {
     margin-bottom: $column-element-margin;
     font-size: $h3-size;
 }
 
-.item__link { 
+.nav__link { 
     position: relative;
     left: 0;
     opacity: 0.5;

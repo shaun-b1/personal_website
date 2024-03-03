@@ -1,10 +1,6 @@
 export function title() {
-  const head = document.createElement('section');
-  head.classList.add('left-column__header');
+  const title = document.createElement('h1');
+  title.classList.add('left-column__title');
 
-  const element = document.createElement('h1');
-  element.classList.add('header__title');
-  head.appendChild(element);
-
-  return head;
+  return title;
 }

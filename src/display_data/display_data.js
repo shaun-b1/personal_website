@@ -2,40 +2,39 @@ import '../assets/images/Arrow Up Right Icon.svg';
 import { fetchData } from '../github_pins/github_pins';
 
 export async function displayData() {
-  const pins = document.createElement('section');
-  pins.classList.add('right-column__pins');
-  pins.id = 'projects';
-  pins.setAttribute('aria-label', 'A selection of projects from my github');
+  const projects = document.createElement('section');
+  projects.classList.add('right-column__projects');
+  projects.id = 'projects';
+  projects.setAttribute('aria-label', 'A selection of projects from my github');
 
-  const pinsTitle = document.createElement('h2');
-  pinsTitle.classList.add('pins__title');
-  pinsTitle.textContent = 'Projects';
+  const projectsTitle = document.createElement('h2');
+  projectsTitle.classList.add('projects__title');
+  projectsTitle.textContent = 'Projects';
 
-  const pinsList = document.createElement('ul');
-  pinsList.classList.add('pins__list');
+  const projectsList = document.createElement('ul');
+  projectsList.classList.add('projects__list');
 
-  pins.append(pinsTitle, pinsList);
+  projects.append(projectsTitle, projectsList);
 
   try {
     const data = await fetchData();
-    console.log(data.user.pinnedItems.edges);
     data.user.pinnedItems.edges.forEach((edge) => {
       const { name, description, languages, openGraphImageUrl, deployments } =
         edge.node;
 
-      const pin = document.createElement('li');
-      pin.classList.add('list__pin');
+      const projectCard = document.createElement('li');
+      projectCard.classList.add('project__card');
 
-      const pinImage = document.createElement('img');
-      pinImage.classList.add('pin__image');
-      pinImage.src = openGraphImageUrl;
-      pinImage.alt = `${name} screenshot`;
+      const cardImage = document.createElement('img');
+      cardImage.classList.add('card__image');
+      cardImage.src = openGraphImageUrl;
+      cardImage.alt = `${name} screenshot`;
 
-      const pinContent = document.createElement('div');
-      pinContent.classList.add('pin__content');
+      const cardContent = document.createElement('div');
+      cardContent.classList.add('card__content');
 
-      const pinTitle = document.createElement('h3');
-      pinTitle.classList.add('pin__title');
+      const contentTitle = document.createElement('h3');
+      contentTitle.classList.add('content__title');
 
       const titleLink = document.createElement('a');
       titleLink.classList.add('title__link');
@@ -54,33 +53,33 @@ export async function displayData() {
 
       titleLink.appendChild(arrow);
 
-      pinTitle.appendChild(titleLink);
+      contentTitle.appendChild(titleLink);
 
-      const pinDescription = document.createElement('p');
-      pinDescription.classList.add('pin__description');
-      pinDescription.textContent = description;
+      const contentDescription = document.createElement('p');
+      contentDescription.classList.add('content__description');
+      contentDescription.textContent = description;
 
-      const pinLanguages = document.createElement('div');
-      pinLanguages.classList.add('pin__languages');
+      const contentLanguages = document.createElement('ul');
+      contentLanguages.classList.add('content__languages');
 
       languages.nodes.forEach((language) => {
-        const pinLanguage = document.createElement('p');
-        pinLanguage.classList.add('pin__language');
-        pinLanguage.textContent = language.name;
-        pinLanguages.appendChild(pinLanguage);
+        const languageItem = document.createElement('li');
+        languageItem.classList.add('languages__item');
+        languageItem.textContent = language.name;
+        contentLanguages.appendChild(languageItem);
       });
 
-      pinContent.append(pinTitle, pinDescription, pinLanguages);
+      cardContent.append(contentTitle, contentDescription, contentLanguages);
 
-      pin.append(pinImage, pinContent);
+      projectCard.append(cardImage, cardContent);
 
-      pinsList.appendChild(pin);
+      projectsList.appendChild(projectCard);
     });
   } catch (error) {
     console.error('Error displaying data:', error);
   }
 
-  return pins;
+  return projects;
 }
 
 function displayName(name) {
