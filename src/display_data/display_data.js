@@ -75,11 +75,10 @@ export async function displayData() {
 
       projectsList.appendChild(projectCard);
     });
+    return projects;
   } catch (error) {
     console.error('Error displaying data:', error);
   }
-
-  return projects;
 }
 
 function displayName(name) {

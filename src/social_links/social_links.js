@@ -61,7 +61,7 @@ export function socialLinks() {
     document
       .querySelector('.left-column__social-links')
       .classList.remove('left-column__social-links--hide');
-  }, 4000);
+  }, 5000);
 
   return socials;
 }

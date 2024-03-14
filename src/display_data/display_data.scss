@@ -1,4 +1,5 @@
 @import '../index/variables.scss';
+@import '../assets/mixins/glassmorphism';
 
 .right-column__projects {
     display: flex;
@@ -18,10 +19,9 @@
 
 .project__card {
     position: relative;
-    border: 1px solid rgba($text-color, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+
+    @include glassmorphism()
 }
 
 .card__image {
@@ -40,14 +40,13 @@
     font-size: $p-size;
     flex-direction: column;
     padding: $column-element-margin 2.5rem;
-    background-color: rgba(39, 39, 39, 0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     &:hover{
         opacity: 1;
     }
+    @include glassmorphism()
 }
 .content__title{
     margin-bottom: calc(#{$column-element-margin} / 2);

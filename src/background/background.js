@@ -1,21 +1,39 @@
 export function background() {
   const canvas = document.getElementById('background__canvas');
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d', { alpha: false });
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
   const colours = [
-    'rgba(245, 184, 65, 0.1)',
-    'rgba(245, 184, 65, 0.2)',
-    'rgba(245, 184, 65, 0.3)',
-    'rgba(245, 184, 65, 0.4)',
-    'rgba(245, 184, 65, 0.5)',
-    'rgba(245, 184, 65, 0.6)',
-    // 'rgba(245, 184, 65, 0.7)',
-    // 'rgba(245, 184, 65, 0.8)',
-    // 'rgba(245, 184, 65, 0.9)',
-    // 'rgba(245, 184, 65, 1)',
+    'rgba(87, 72, 173, 0.1)',
+    'rgba(87, 72, 173, 0.2)',
+    'rgba(87, 72, 173, 0.3)',
+    'rgba(87, 72, 173, 0.4)',
+    'rgba(87, 72, 173, 0.5)',
+    'rgba(87, 72, 173, 0.6)',
+    'rgba(87, 72, 173, 0.7)',
+    'rgba(13, 31, 45, 0.1)',
+    'rgba(13, 31, 45, 0.2)',
+    'rgba(13, 31, 45, 0.3)',
+    'rgba(13, 31, 45, 0.4)',
+    'rgba(13, 31, 45, 0.5)',
+    'rgba(13, 31, 45, 0.6)',
+    'rgba(13, 31, 45, 0.7)',
+    'rgba(96, 132, 120, 0.1)',
+    'rgba(96, 132, 120, 0.2)',
+    'rgba(96, 132, 120, 0.3)',
+    'rgba(96, 132, 120, 0.4)',
+    'rgba(96, 132, 120, 0.5)',
+    'rgba(96, 132, 120, 0.6)',
+    'rgba(96, 132, 120, 0.7)',
+    'rgba(255, 255, 255, 0.1)',
+    'rgba(255, 255, 255, 0.2)',
+    'rgba(255, 255, 255, 0.3)',
+    'rgba(255, 255, 255, 0.4)',
+    'rgba(255, 255, 255, 0.5)',
+    'rgba(255, 255, 255, 0.6)',
+    'rgba(255, 255, 255, 0.7)',
   ];
 
   function randomColour(array) {
@@ -35,6 +53,8 @@ export function background() {
     this.radians = Math.random() * Math.PI * 2;
     this.velocity = Math.random() * 0.0008 + 0.0003;
     this.distanceToCentre = {
+      // x: randomIntFromRange(canvas.width * 0.2, canvas.width * 0.4),
+      // y: randomIntFromRange(canvas.height * 0.2, canvas.height * 0.4),
       x: randomIntFromRange(0, canvas.width * 1.3),
       y: randomIntFromRange(0, canvas.height * 1.1),
     };
@@ -63,7 +83,7 @@ export function background() {
   function init() {
     particles = [];
 
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 350; i++) {
       const radius = Math.random() * 15 + 5;
       particles.push(
         new Particle(
@@ -71,7 +91,6 @@ export function background() {
           canvas.height / 2,
           radius,
           randomColour(colours),
-          //   'rgba(252, 68, 15, 0.5)',
         ),
       );
     }

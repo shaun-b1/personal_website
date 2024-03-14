@@ -1,10 +1,14 @@
 @import '../index/variables.scss';
+@import '../assets/mixins/glassmorphism.scss';
 
 .right-column__about {
-    // padding-top: calc(var(--dynamic-height))
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: $column-element-margin
+    gap: $column-element-margin;
+    padding: $column-element-margin;
+
+    @include glassmorphism()
 }
 
 .about__title {

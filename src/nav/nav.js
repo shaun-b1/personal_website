@@ -25,7 +25,7 @@ export function nav() {
     document
       .querySelector('.left-column__nav')
       .classList.remove('left-column__nav--hide');
-  }, 4000);
+  }, 5000);
 
   return nav;
 }

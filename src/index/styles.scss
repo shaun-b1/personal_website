@@ -6,6 +6,7 @@
 @import '../display_data/display_data.scss';
 @import '../technologies/technologies.scss';
 @import '../background/background.scss';
+@import '../assets/mixins/_glassmorphism.scss';
 
 body {
     background-color: $background-color;
