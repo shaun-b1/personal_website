@@ -1,22 +1,19 @@
-@import '../index/variables.scss';
-@import '../assets/mixins/glassmorphism.scss';
-
 .right-column__about {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: $column-element-margin;
-    padding: $column-element-margin;
+    gap: var(--column-element-margin);
+    padding: var(--column-element-margin);
 
     @include glassmorphism()
 }
 
 .about__title {
-    font-size: $h3-size;
+    font-size: var(--h3-size);
 }
 
-.about__para {
-    font-size: $p-size;
+.about__paragraph {
+    font-size: var(--p-size);
     line-height: 1.4rem;
 }
 

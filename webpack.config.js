@@ -6,15 +6,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
   mode: 'development',
   context: path.resolve(__dirname, 'src'),
-  entry: {
-    index: './index/index.js',
-    nav: './nav/nav.js',
-    title: './title/title.js',
-    social_links: './social_links/social_links.js',
-    about: './about/about.js',
-    github_pins: './github_pins/github_pins.js',
-    technologies: './technologies/technologies.js',
-  },
+  entry: './index/index.js',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
@@ -38,10 +30,12 @@ module.exports = {
     rules: [
       {
         test: /\.s[ac]ss$/i,
+        include: path.resolve(__dirname, 'src'),
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.m?js$/,
+        include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -52,10 +46,12 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        include: path.resolve(__dirname, 'src'),
         type: 'asset/resource',
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg)$/i,
+        include: path.resolve(__dirname, 'src'),
         type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name][ext]',
@@ -64,11 +60,21 @@ module.exports = {
     ],
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   optimization: {
+    moduleIds: 'deterministic',
     runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
   },
 };

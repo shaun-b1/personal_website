@@ -83,7 +83,7 @@ export function background() {
   function init() {
     particles = [];
 
-    for (let i = 0; i < 350; i++) {
+    for (let i = 0; i < 200; i++) {
       const radius = Math.random() * 15 + 5;
       particles.push(
         new Particle(

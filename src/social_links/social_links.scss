@@ -13,9 +13,9 @@
 
 .social__icon {
     filter: invert(100%);
-    height: 3rem;
-    width: 3rem;
-    margin-right: $column-element-margin;
+    height: var(--image-size);
+    width: var(--image-size);
+    margin-right: var(--column-element-margin);
     opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
     &:hover {

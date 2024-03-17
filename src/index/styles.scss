@@ -1,14 +1,6 @@
-@import './variables.scss';
-@import '../title/title.scss';
-@import '../nav/nav.scss';
-@import '../social_links/social_links.scss';
-@import '../about/about.scss';
-@import '../display_data/display_data.scss';
-@import '../technologies/technologies.scss';
-@import '../background/background.scss';
-@import '../assets/mixins/_glassmorphism.scss';
+@import '../assets/mixins/variables';
 
-body {
+:root {
     background-color: $background-color;
     color: $text-color;
     font-family: $font-family;
@@ -18,8 +10,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    padding-left: $main-horizontal-margin;
-    padding-right: $main-horizontal-margin;
+    padding: 0 var(--main-horizontal-margin);
     justify-content: space-between;
     gap: 1rem;
     box-sizing: border-box;
@@ -29,20 +20,19 @@ body {
     position: sticky;
     display: flex;
     flex-direction: column;
-    gap: $column-section-margin;
+    gap: var(--column-section-margin);
     width: 45%;
     max-height: 100vh;
     top: 0;
-    padding-top: $main-vertical-spacing;
-    padding-bottom: $main-vertical-spacing;
+    padding: var(--main-vertical-spacing) 0;
 }
 
 .right-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: $column-section-margin;
-    padding: $main-vertical-spacing 10px;
+    gap: var(--column-section-margin);
+    padding: var(--main-vertical-spacing) 10px;
     width: 50%;
     opacity: 1;
     transition: opacity 1s ease-in-out 3s;
@@ -60,18 +50,18 @@ body {
 
 @media (max-width: 1023px) {
     .container {
-        width: auto;
         height: auto;
-        padding: $main-vertical-spacing $main-horizontal-margin;
+        width: auto;
+        padding: var(--main-vertical-spacing) var(--main-horizontal-margin);
         flex-direction: column;
-        gap: $column-section-margin;
+        gap: var(--column-section-margin);
     }
 
     .left-column {
         position: relative;
         width: auto;
         max-height: none;
-        padding: 0;
+        padding: 0 10px;
     }
 
     .right-column {
@@ -80,3 +70,12 @@ body {
         overflow-y: visible;
     }
 }
+
+@import '../assets/mixins/glassmorphism';
+@import '../title/title';
+@import '../nav/nav';
+@use '../social_links/social_links';
+@use '../about/about';
+@use '../display_data/display_data';
+@use '../technologies/technologies';
+@use '../background/background';

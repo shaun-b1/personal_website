@@ -1,20 +1,23 @@
+// @import '../assets/mixins/glassmorphism';
+
 .right-column__technologies {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: $column-element-margin;
-    padding: $column-element-margin;
+    gap: var(--column-element-margin);
+    padding: var(--column-element-margin);
+    
 
     @include glassmorphism()
 }
 
 .technologies__title {
-    font-size: $h3-size;
+    font-size: var(--h3-size);
     line-height: 1.3rem;
 }
 
 .technologies__subtitle{
-    font-size: $p-size;
+    font-size: var(--p-size);
     line-height: 1.3rem;
 }
 
@@ -22,11 +25,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    row-gap: $column-element-margin;
+    row-gap: var(--column-element-margin);
 }
 
 .grid__tile {
-    font-size: $p-size;
+    font-size: var(--p-size);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,8 +38,8 @@
 
 .tile__image{
     filter: invert(100%);
-    height: 2.6rem;
-    width: 2.6rem;
+    height: var(--image-size);
+    width: var(--image-size);
     padding: 0.5rem;
 }
 
@@ -48,5 +51,11 @@
 @media (min-width: 1024px) {
     .technologies__title {
         display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .technologies__grid {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }

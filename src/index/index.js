@@ -7,7 +7,7 @@ import { socialLinks } from '../social_links/social_links';
 import { about } from '../about/about';
 import { displayData } from '../display_data/display_data';
 import { listTechnologies } from '../technologies/technologies';
-// import { background } from '../background/background';
+import { background } from '../background/background';
 import Typed from 'typed.js';
 
 async function renderData() {
@@ -30,7 +30,6 @@ async function renderData() {
 
     container.append(leftColumn, rightColumn, canvas);
     document.body.append(container);
-    // background();
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,7 +43,7 @@ async function renderData() {
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0.45 },
     );
 
     document.querySelectorAll('section[id]').forEach((section) => {
@@ -57,6 +56,7 @@ async function renderData() {
       document
         .querySelector('.right-column')
         .classList.remove('right-column--hide');
+      background();
     }, 5000);
 
     let isFirstString = true;
@@ -91,26 +91,3 @@ async function renderData() {
 }
 
 renderData();
-
-// new Typed('#hello-world__typed', {
-//   strings: [`Hello World,`],
-//   typeSpeed: 100,
-//   showCursor: true,
-//   preStringTyped: () => {
-//     const cursor = document.querySelector('.typed-cursor');
-//     cursor.style.display = 'inline';
-//   },
-//   onComplete: (instance) => {
-//     instance.cursor.remove();
-//   },
-// });
-// new Typed('#title__typed', {
-//   strings: [`I'm Shaun MacWilliam, and I'm a Web Developer`],
-//   typeSpeed: 100,
-//   startDelay: 3000,
-//   showCursor: true,
-//   preStringTyped: () => {
-//     const cursor = document.querySelector('.typed-cursor');
-//     cursor.style.display = 'inline';
-//   },
-// });

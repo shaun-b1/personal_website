@@ -24,14 +24,5 @@ export function about() {
     about.appendChild(aboutPara);
   });
 
-  setTimeout(() => {
-    const targetElement = document.querySelector('.left-column__title');
-    const height = targetElement.offsetHeight;
-    document.documentElement.style.setProperty(
-      '--dynamic-height',
-      height + 'px',
-    );
-  }, 5500);
-
   return about;
 }

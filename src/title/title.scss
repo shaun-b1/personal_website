@@ -1,21 +1,13 @@
-@import '../index/variables.scss';
-
 .left-column__title {
-    font-size: $h1-size;
-}
-
-#hello-world__typed {
-    background-color: black;
-    color: rgb(40, 254, 20);
-    // font-family: Andale;
+    font-size: var(--h1-size);
 }
 
 #typed {
-    font-size: $h1-size;
+    font-size: var(--h1-size);
 }
 
 .typed-cursor {
-    font-size: $h1-size;
+    font-size: var(--h1-size);
 }
 
   

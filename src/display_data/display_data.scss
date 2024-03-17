@@ -1,20 +1,19 @@
-@import '../index/variables.scss';
-@import '../assets/mixins/glassmorphism';
+// @import '../assets/mixins/glassmorphism';
 
 .right-column__projects {
     display: flex;
     flex-direction: column;
-    gap: $column-element-margin;
+    gap: var(--column-element-margin);
 }
 
 .projects__title {
-    font-size: $h3-size;
+    font-size: var(--h3-size);
 }
 
 .projects__list {
     display: flex;
     flex-direction: column;
-    gap: $column-element-margin;
+    gap: var(--column-element-margin);
 }
 
 .project__card {
@@ -37,9 +36,9 @@
 .card__content {
     position: relative;
     display: flex;
-    font-size: $p-size;
+    font-size: var(--p-size);
     flex-direction: column;
-    padding: $column-element-margin 2.5rem;
+    padding: var(--column-element-margin) 2.5rem;
 
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -49,11 +48,11 @@
     @include glassmorphism()
 }
 .content__title{
-    margin-bottom: calc(#{$column-element-margin} / 2);
+    margin-bottom: calc(#{var(--column-element-margin)} / 2);
 }
 
 .title__link { 
-    font-size: $h3-size;
+    font-size: var(--h3-size);
 
     &:hover > .link__arrow {
         transform: translate(0.25rem, -0.25rem);
@@ -64,13 +63,12 @@
     height: 1.5rem;
     width: 1.5rem;
     filter: invert(95%);
-    position: relative;
-    top: 0.6rem;
+    position: absolute;
     transition: transform 0.3s ease-in-out;
 }
 
 .content__description {
-    margin-bottom: $column-element-margin;
+    margin-bottom: var(--column-element-margin);
 }
 
 .content__languages {
@@ -80,16 +78,19 @@
 }
 
 .languages__item {
-    border: 1px solid rgba($text-color, 0.1);
     padding: 0.5rem 2rem;
-    background-color: rgba($highlight-color, 0.4);
-    backdrop-filter: blur(30px);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+
+    @include glassmorphism($highlight-color)
 }
 
 @media (min-width: 1024px) {
     .projects__title {
         display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .card__content{
+        opacity: 1;
     }
 }
