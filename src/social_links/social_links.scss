@@ -1,24 +1,31 @@
+@use "../assets/mixins/variables" as v;
+
+// Styles for the social media links
 .left-column__social-links {
-    opacity: 1;
-    transition: opacity 1s ease-in 3s;
-    &--hide {
-        opacity: 0;
-    }
+  opacity: 1;
+  transition: v.$trans-page-load;
+
+  &--hide {
+    opacity: 0;
+  }
 }
 
+// Styles for the social media list
 .social-links__list {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
+// Styles for the social media icons
 .social__icon {
-    filter: invert(100%);
-    height: var(--image-size);
-    width: var(--image-size);
-    margin-right: var(--column-element-margin);
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in-out;
-    &:hover {
-        opacity: 1;
-    }
+  filter: invert(100%);
+  height: var(--image-size);
+  width: var(--image-size);
+  margin-right: var(--column-element-margin);
+  opacity: 0.5;
+  transition: opacity v.$trans-hover;
+
+  &:hover {
+    opacity: 1;
+  }
 }

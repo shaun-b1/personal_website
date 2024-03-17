@@ -1,61 +1,65 @@
-// @import '../assets/mixins/glassmorphism';
+@use '../assets/mixins/glassmorphism' as glass;
 
+// Technologies section styles
 .right-column__technologies {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: var(--column-element-margin);
-    padding: var(--column-element-margin);
-    
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--column-element-margin);
+  padding: var(--column-element-margin);
 
-    @include glassmorphism()
+  @include glass.glassmorphism();
 }
 
+// Title styles
 .technologies__title {
-    font-size: var(--h3-size);
-    line-height: 1.3rem;
+  font-size: var(--h3-size);
+  line-height: 1.3rem;
+
+  // Hide title on smaller screens
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
-.technologies__subtitle{
-    font-size: var(--p-size);
-    line-height: 1.3rem;
+// Section caption styles
+.technologies__subtitle {
+  font-size: var(--p-size);
+  line-height: 1.3rem;
 }
 
+// Grid container styles
 .technologies__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    row-gap: var(--column-element-margin);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  row-gap: var(--column-element-margin);
+
+  // Adjust grid layout for smaller screens
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
+// Grid tile styles
 .grid__tile {
-    font-size: var(--p-size);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  font-size: var(--p-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.tile__image{
-    filter: invert(100%);
-    height: var(--image-size);
-    width: var(--image-size);
-    padding: 0.5rem;
+// Tile image styles
+.tile__image {
+  filter: invert(100%);
+  height: var(--image-size);
+  width: var(--image-size);
+  padding: 0.5rem;
 }
 
-.tile__text{
-    text-align: center;
-    padding: 0.5rem;
-}
-
-@media (min-width: 1024px) {
-    .technologies__title {
-        display: none;
-    }
-}
-
-@media (max-width: 1023px) {
-    .technologies__grid {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+// Tile text styles
+.tile__text {
+  text-align: center;
+  padding: 0.5rem;
 }

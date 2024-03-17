@@ -1,24 +1,26 @@
 @font-face {
   font-family: 'Montserrat';
   src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf'),
-    url('../assets/fonts/Montserrat\ font.woff2');
+    url('../assets/fonts/Montserrat font.woff2');
   font-weight: normal;
   font-style: normal;
 }
 
+// Common variables
 $background-color: rgb(46, 52, 64);
 $text-color: rgb(236, 239, 244);
 $highlight-color: rgb(115, 137, 174);
 $font-family: 'Montserrat', sans-serif;
+$trans-hover: 0.3s ease-in-out;
+$trans-page-load: opacity 1s ease-in 3s;
 
+// Media queries
 @media (min-width: 1024px) {
   :root {
     --h1-size: 2.5rem;
     --h3-size: 1.2rem;
     --p-size: 1rem;
-
     --image-size: 3rem;
-
     --main-horizontal-margin: 6rem;
     --main-vertical-spacing: 5rem;
     --column-section-margin: 4rem;
@@ -31,9 +33,7 @@ $font-family: 'Montserrat', sans-serif;
     --h1-size: 2rem;
     --h3-size: 1rem;
     --p-size: 0.8rem;
-
     --image-size: 3rem;
-
     --main-horizontal-margin: 3rem;
     --main-vertical-spacing: 3rem;
     --column-section-margin: 2rem;
@@ -46,14 +46,10 @@ $font-family: 'Montserrat', sans-serif;
     --h1-size: 2rem;
     --h3-size: 1rem;
     --p-size: 0.8rem;
-
     --image-size: 3rem;
-
     --main-horizontal-margin: 1rem;
     --main-vertical-spacing: 2.5rem;
     --column-section-margin: 2.5rem;
     --column-element-margin: 1.5rem;
   }
 }
-
-@forward "variables";

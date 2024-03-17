@@ -1,11 +1,20 @@
-@import '../assets/mixins/variables';
+@use '../assets/mixins/variables' as v;
+@use '../title/title';
+@use '../nav/nav';
+@use '../social_links/social_links';
+@use '../about/about';
+@use '../display_data/display_data';
+@use '../technologies/technologies';
+@use '../background/background';
 
+// Root styles
 :root {
-    background-color: $background-color;
-    color: $text-color;
-    font-family: $font-family;
-  }
+    background-color: v.$background-color;
+    color: v.$text-color;
+    font-family: v.$font-family;
+}
 
+// Main container styles
 .container {
     width: 100vw;
     height: 100vh;
@@ -16,6 +25,7 @@
     box-sizing: border-box;
 }
 
+// Left column styles
 .left-column {
     position: sticky;
     display: flex;
@@ -27,6 +37,7 @@
     padding: var(--main-vertical-spacing) 0;
 }
 
+// Right column styles
 .right-column {
     display: flex;
     flex-direction: column;
@@ -35,7 +46,7 @@
     padding: var(--main-vertical-spacing) 10px;
     width: 50%;
     opacity: 1;
-    transition: opacity 1s ease-in-out 3s;
+    transition: v.$trans-page-load;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: overlay;
@@ -48,6 +59,7 @@
     }
 }
 
+// Media query for smaller screens
 @media (max-width: 1023px) {
     .container {
         height: auto;
@@ -70,12 +82,3 @@
         overflow-y: visible;
     }
 }
-
-@import '../assets/mixins/glassmorphism';
-@import '../title/title';
-@import '../nav/nav';
-@use '../social_links/social_links';
-@use '../about/about';
-@use '../display_data/display_data';
-@use '../technologies/technologies';
-@use '../background/background';

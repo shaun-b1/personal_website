@@ -1,3 +1,6 @@
+@use "../assets/mixins/variables" as v;
+
+// Canvas atoms
 #background__canvas {
     position: fixed;
     top: 50%;
@@ -6,4 +9,6 @@
     z-index: -9999;
     will-change: contents;
     transform: translateZ(0,0,0);
+    opacity: 0;
+    transition: v.$trans-page-load
 }

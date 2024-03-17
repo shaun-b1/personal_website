@@ -1,32 +1,46 @@
+@use "../assets/mixins/variables" as v;
+
+// Styles for the navigation container
 .left-column__nav {
     margin-bottom: auto;
     opacity: 1;
-    transition: opacity 1s ease-in 3s;
+    transition: v.$trans-page-load;
+
+    // Styles for hiding the navigation on small screens
+    @media (max-width: 1023px) {
+        display: none;
+    }
+
+    // Styles for hiding the navigation on page load
     &--hide {
         opacity: 0;
     }
 }
 
+// Styles for navigation menu items
 .nav__item {
     margin-bottom: var(--column-element-margin);
     font-size: var(--h3-size);
 }
 
+// Styles for navigation links
 .nav__link { 
     position: relative;
     left: 0;
     opacity: 0.5;
-    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+    transition: opacity v.$trans-hover, left v.$trans-hover;
 
+    // Styles for the pseudo-element before the link
     &::before {
         content: '//';
         position: absolute;
         top: 0.15rem;
         left: calc(#{var(--h3-size)} * -1);
         opacity: 0; 
-        transition: opacity 0.3s ease-in-out;
+        transition: opacity v.$trans-hover;
     }
 
+    // Styles for link hover and active states
     &:hover, 
     &--active {
         left: var(--h3-size);
@@ -34,11 +48,5 @@
         &::before {
             opacity: 1;
         }
-    }
-}
-
-@media (max-width: 1023px) {
-    .left-column__nav {
-        display: none;
     }
 }

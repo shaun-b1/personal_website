@@ -1,13 +1,9 @@
-.left-column__title {
-    font-size: var(--h1-size);
+%fontSize {
+  font-size: var(--h1-size);
 }
 
-#typed {
-    font-size: var(--h1-size);
-}
-
+.left-column__title,
+#typed,
 .typed-cursor {
-    font-size: var(--h1-size);
+  @extend %fontSize;
 }
-
-  

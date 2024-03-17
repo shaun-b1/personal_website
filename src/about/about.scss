@@ -1,24 +1,28 @@
+@use '../assets/mixins/glassmorphism' as glass;
+
+// About section styles
 .right-column__about {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: var(--column-element-margin);
-    padding: var(--column-element-margin);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--column-element-margin);
+  padding: var(--column-element-margin);
 
-    @include glassmorphism()
+  @include glass.glassmorphism();
 }
 
+// About title styles
 .about__title {
-    font-size: var(--h3-size);
+  font-size: var(--h3-size);
+
+  // Hide title on smaller screens
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
+// Paragraph styles
 .about__paragraph {
-    font-size: var(--p-size);
-    line-height: 1.4rem;
-}
-
-@media (min-width: 1024px) {
-    .about__title {
-        display: none;
-    }
+  font-size: var(--p-size);
+  line-height: 1.4rem;
 }

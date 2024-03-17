@@ -1,96 +1,111 @@
-// @import '../assets/mixins/glassmorphism';
+@use '../assets/mixins/glassmorphism' as glass;
+@use '../assets/mixins/variables' as v;
 
+// Projects section styles
 .right-column__projects {
-    display: flex;
-    flex-direction: column;
-    gap: var(--column-element-margin);
+  display: flex;
+  flex-direction: column;
+  gap: var(--column-element-margin);
 }
 
+// Projects title styles
 .projects__title {
-    font-size: var(--h3-size);
+  font-size: var(--h3-size);
+
+  // Hide title on smaller screens
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
+// Projects list styles
 .projects__list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--column-element-margin);
+  display: flex;
+  flex-direction: column;
+  gap: var(--column-element-margin);
 }
 
+// Github project card styles
 .project__card {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    @include glassmorphism()
+  @include glass.glassmorphism();
 }
 
+// Github project image
 .card__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
 }
 
+// Github project content styles
 .card__content {
-    position: relative;
-    display: flex;
-    font-size: var(--p-size);
-    flex-direction: column;
-    padding: var(--column-element-margin) 2.5rem;
+  position: relative;
+  display: flex;
+  font-size: var(--p-size);
+  flex-direction: column;
+  padding: var(--column-element-margin) 2.5rem;
+  opacity: 0;
+  transition: opacity v.$trans-hover;
 
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    &:hover{
-        opacity: 1;
-    }
-    @include glassmorphism()
-}
-.content__title{
-    margin-bottom: calc(#{var(--column-element-margin)} / 2);
-}
+  // Show content on hover
+  &:hover {
+    opacity: 1;
+  }
 
-.title__link { 
-    font-size: var(--h3-size);
+  @include glass.glassmorphism();
 
-    &:hover > .link__arrow {
-        transform: translate(0.25rem, -0.25rem);
-    }
+  // Show cards by default on smaller screens
+  @media (max-width: 1023px) {
+    opacity: 1;
+  }
 }
 
+// Content title styles
+.content__title {
+  margin-bottom: calc(#{var(--column-element-margin)} / 2);
+}
+
+// Title link styles
+.title__link {
+  font-size: var(--h3-size);
+
+  // Arrow animation on hover
+  &:hover > .link__arrow {
+    transform: translate(0.25rem, -0.25rem);
+  }
+}
+
+// Link arrow styles
 .link__arrow {
-    height: 1.5rem;
-    width: 1.5rem;
-    filter: invert(95%);
-    position: absolute;
-    transition: transform 0.3s ease-in-out;
+  height: 1.5rem;
+  width: 1.5rem;
+  filter: invert(95%);
+  position: absolute;
+  transition: transform v.$trans-hover;
 }
 
+// Content description styles
 .content__description {
-    margin-bottom: var(--column-element-margin);
+  margin-bottom: var(--column-element-margin);
 }
 
+// Languages used list styles
 .content__languages {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
+// Language item styles
 .languages__item {
-    padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem;
 
-    @include glassmorphism($highlight-color)
-}
-
-@media (min-width: 1024px) {
-    .projects__title {
-        display: none;
-    }
-}
-
-@media (max-width: 1023px) {
-    .card__content{
-        opacity: 1;
-    }
+  @include glass.glassmorphism(v.$highlight-color);
 }

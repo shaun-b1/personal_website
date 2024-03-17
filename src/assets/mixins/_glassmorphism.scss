@@ -1,9 +1,9 @@
-// @import '../mixins/variables';
+@use "./variables" as v;
 
-@mixin glassmorphism($bg-color: $background-color) {
+@mixin glassmorphism($bg-color: v.$background-color) {
     background: rgba($bg-color, 0.6);
     border-radius: 15px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 	backdrop-filter: blur(12px);
-    border: 1px solid rgba($text-color, 0.15);
+    border: 1px solid rgba(v.$text-color, 0.15);
 }

@@ -45,6 +45,10 @@ export function background() {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
+  function fadeInCanvas() {
+    canvas.style.opacity = '1';
+  }
+
   function Particle(x, y, r, colour) {
     this.x = x;
     this.y = y;
@@ -108,4 +112,5 @@ export function background() {
 
   init();
   animate();
+  fadeInCanvas(); // Adjust delay as needed
 }
