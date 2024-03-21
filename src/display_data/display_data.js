@@ -14,9 +14,12 @@ export async function displayData() {
   const projectsList = document.createElement('ul');
   projectsList.classList.add('projects__list');
 
-  projects.append(projectsTitle, projectsList);
+  projects.appendChild(projectsTitle);
 
   try {
+    const projectsList = document.createElement('ul');
+    projectsList.classList.add('projects__list');
+
     const data = await fetchData();
     data.user.pinnedItems.edges.forEach((edge) => {
       const { name, description, languages, openGraphImageUrl, deployments } =
@@ -75,9 +78,18 @@ export async function displayData() {
 
       projectsList.appendChild(projectCard);
     });
+
+    projects.appendChild(projectsList);
     return projects;
   } catch (error) {
-    console.error('Error displaying data:', error);
+    projects.classList.add('right-column__projects--error');
+
+    const errorElement = document.createElement('p');
+    errorElement.classList.add('projects__error');
+    errorElement.innerHTML = `Oh no, something has gone wrong! If you can see this, my GraphQL query has failed. Please <a href="mailto:shaun.macwilliam@icloud.com?subject=Your%20GraphQL%20query%20is%20down!">ping me a message</a>, and I'll fix it!`;
+
+    projects.appendChild(errorElement);
+    return projects;
   }
 }
 

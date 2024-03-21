@@ -4,13 +4,13 @@ This repository contains the source code for my personal website. It showcases m
 
 ## Table of Contents
 
-- [Introduction](##Introduction)
-- [Features](##Features)
-- [Installation](##Installation)
-- [Usage](##Usage)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Technologies Used](##technologies-used)
-- [Contributing](##Contributing)
-- [License](##License)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Introduction
 

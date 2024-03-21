@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--column-element-margin);
+  &--error {
+    padding: var(--column-element-margin);
+    @include glass.glassmorphism()
+  }
 }
 
 // Projects title styles
@@ -108,4 +112,14 @@
   padding: 0.5rem 2rem;
 
   @include glass.glassmorphism(v.$highlight-color);
+}
+
+// Error styles 
+.projects__error {
+  font-size: var(--p-size);
+  line-height: 1.4rem;
+}
+
+.projects__error a{
+  color: v.$highlight-color;
 }
