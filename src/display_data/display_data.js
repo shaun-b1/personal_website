@@ -86,7 +86,7 @@ export async function displayData() {
 
     const errorElement = document.createElement('p');
     errorElement.classList.add('projects__error');
-    errorElement.innerHTML = `Oh no, something has gone wrong! If you can see this, my GraphQL query has failed. Please <a href="mailto:shaun.macwilliam@icloud.com?subject=Your%20GraphQL%20query%20is%20down!">ping me a message</a>, and I'll fix it!`;
+    errorElement.innerHTML = `Oh no, something has gone wrong! If you can see this, my GraphQL query has failed. Please <a href="mailto:shaun.macwilliam@icloud.com?subject=Your%20GraphQL%20query%20is%20down!" aria_label="Opens a new email to shaun.macwilliam@icloud.com with the title "Your GrapQL query is down">ping me a message</a>, and I'll fix it!`;
 
     projects.appendChild(errorElement);
     return projects;

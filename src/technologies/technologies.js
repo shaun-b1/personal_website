@@ -9,6 +9,7 @@ import '../assets/images/Jest.svg';
 import '../assets/images/Sass SVG Repo.svg';
 import '../assets/images/Nodejs icon.svg';
 import '../assets/images/Ruby SVG icon.svg';
+import '../assets/images/Git icon.svg';
 
 export function listTechnologies() {
   const technologyData = [
@@ -55,6 +56,10 @@ export function listTechnologies() {
     {
       name: 'Ruby on Rails',
       icon: '../assets/images/Ruby SVG icon.svg',
+    },
+    {
+      name: 'Git',
+      icon: '../assets/images/Git icon.svg',
     },
   ];
 

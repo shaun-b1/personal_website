@@ -7,6 +7,7 @@ import { socialLinks } from '../social_links/social_links';
 import { about } from '../about/about';
 import { displayData } from '../display_data/display_data';
 import { listTechnologies } from '../technologies/technologies';
+import { contact } from '../contact/contact';
 import { background } from '../background/background';
 import Typed from 'typed.js';
 
@@ -26,7 +27,7 @@ async function renderData() {
 
     const rightColumn = document.createElement('main');
     rightColumn.classList.add('right-column', 'right-column--hide');
-    rightColumn.append(about(), projects, listTechnologies());
+    rightColumn.append(about(), projects, listTechnologies(), contact());
 
     container.append(leftColumn, rightColumn, canvas);
     document.body.append(container);
