@@ -1,65 +1,65 @@
-import '../assets/images/Html5.svg';
-import '../assets/images/Css3 01 icon.svg';
-import '../assets/images/Javascript Fill Icon.svg';
-import '../assets/images/Npm.svg';
-import '../assets/images/Yarn icon.svg';
-import '../assets/images/Webpack SVG icon.svg';
-import '../assets/images/Babel 16 icon.svg';
-import '../assets/images/Jest.svg';
-import '../assets/images/Sass SVG Repo.svg';
-import '../assets/images/Nodejs icon.svg';
-import '../assets/images/Ruby SVG icon.svg';
-import '../assets/images/Git icon.svg';
+import HTMLIcon from '../assets/images/Html5.svg';
+import CSSIcon from '../assets/images/Css3 01 icon.svg';
+import JSIcon from '../assets/images/Javascript Fill Icon.svg';
+import npmIcon from '../assets/images/Npm.svg';
+import yarnIcon from '../assets/images/Yarn icon.svg';
+import webpackIcon from '../assets/images/Webpack SVG icon.svg';
+import babelIcon from '../assets/images/Babel 16 icon.svg';
+import jestIcon from '../assets/images/Jest.svg';
+import sassIcon from '../assets/images/Sass SVG Repo.svg';
+import nodeIcon from '../assets/images/Nodejs icon.svg';
+import rubyIcon from '../assets/images/Ruby SVG icon.svg';
+import gitIcon from '../assets/images/Git icon.svg';
 
 export function listTechnologies() {
   const technologyData = [
     {
       name: 'HTML',
-      icon: '../assets/images/Html5.svg',
+      icon: HTMLIcon,
     },
     {
       name: 'CSS',
-      icon: '../assets/images/Css3 01 icon.svg',
+      icon: CSSIcon,
     },
     {
       name: 'JavaScript',
-      icon: '../assets/images/Javascript Fill Icon.svg',
+      icon: JSIcon,
     },
     {
       name: 'NPM',
-      icon: '../assets/images/Npm.svg',
+      icon: npmIcon,
     },
     {
       name: 'Yarn',
-      icon: '../assets/images/Yarn icon.svg',
+      icon: yarnIcon,
     },
     {
       name: 'Webpack',
-      icon: '../assets/images/Webpack SVG icon.svg',
+      icon: webpackIcon,
     },
     {
       name: 'Babel',
-      icon: '../assets/images/Babel 16 icon.svg',
+      icon: babelIcon,
     },
     {
       name: 'Jest',
-      icon: '../assets/images/Jest.svg',
+      icon: jestIcon,
     },
     {
       name: 'Sass',
-      icon: '../assets/images/Sass SVG Repo.svg',
+      icon: sassIcon,
     },
     {
       name: 'NodeJS',
-      icon: '../assets/images/Nodejs icon.svg',
+      icon: nodeIcon,
     },
     {
       name: 'Ruby on Rails',
-      icon: '../assets/images/Ruby SVG icon.svg',
+      icon: rubyIcon,
     },
     {
       name: 'Git',
-      icon: '../assets/images/Git icon.svg',
+      icon: gitIcon,
     },
   ];
 

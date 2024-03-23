@@ -4,25 +4,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  mode: 'development',
   context: path.resolve(__dirname, 'src'),
   entry: './index/index.js',
-  devtool: 'inline-source-map',
-  devServer: {
-    static: './dist',
-    host: 'localhost',
-    port: 8080,
-    compress: false,
-    webSocketServer: false,
-  },
+
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Shaun MacWilliam Dev',
+      title: 'Shaun MacWilliam, Web Developer',
       template: './index/index.html',
       filename: 'index.html',
     }),
     new Dotenv({
-      path: './.env',
+      path: '.env',
       safe: true,
     }),
   ],
@@ -54,7 +46,7 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name][ext]',
+          filename: './assets/images/[name][ext]',
         },
       },
     ],

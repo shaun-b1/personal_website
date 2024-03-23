@@ -1,4 +1,4 @@
-import '../assets/images/Arrow Up Right Icon.svg';
+import arrowIcon from '../assets/images/Arrow Up Right Icon.svg';
 import { fetchData } from '../github_pins/github_pins';
 
 export async function displayData() {
@@ -50,7 +50,7 @@ export async function displayData() {
       );
 
       const arrow = document.createElement('img');
-      arrow.src = '../assets/images/Arrow Up Right Icon.svg';
+      arrow.src = arrowIcon;
       arrow.classList.add('link__arrow');
       arrow.setAttribute('aria-hidden', 'true');
 

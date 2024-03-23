@@ -1,6 +1,6 @@
-import '../assets/images/GitHub SVGRepo.svg';
-import '../assets/images/LinkedIn brand icon.png';
-import '../assets/images/Instagram brand icon.png';
+import githubIcon from '../assets/images/GitHub SVGRepo.svg';
+import linkedInIcon from '../assets/images/LinkedIn brand icon.png';
+import instagramIcon from '../assets/images/Instagram brand icon.png';
 
 export function socialLinks() {
   const socials = document.createElement('section');
@@ -18,17 +18,17 @@ export function socialLinks() {
     {
       name: 'GitHub',
       url: 'https://github.com/shaun-b1',
-      icon: '../assets/images/Github SVGRepo.svg',
+      icon: githubIcon,
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/shaun-macwilliam/',
-      icon: '../assets/images/Linkedin brand icon.png',
+      icon: linkedInIcon,
     },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/shauny_b1/',
-      icon: '../assets/images/Instagram brand icon.png',
+      icon: instagramIcon,
     },
   ];
 
