@@ -15,7 +15,7 @@ $trans-hover: 0.3s ease-in-out;
 $trans-page-load: opacity 1s ease-in 3s;
 
 // Media queries
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   :root {
     --h1-size: 2.5rem;
     --h3-size: 1.2rem;
@@ -28,7 +28,7 @@ $trans-page-load: opacity 1s ease-in 3s;
   }
 }
 
-@media (max-width: 1023px) and (min-width: 769px) {
+@media (max-width: 1024px) and (min-width: 769px) {
   :root {
     --h1-size: 2rem;
     --h3-size: 1rem;
