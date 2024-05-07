@@ -1,5 +1,5 @@
-import githubIcon from '../assets/images/GitHub SVGRepo.svg';
-import linkedInIcon from '../assets/images/LinkedIn brand icon.png';
+import githubIcon from '../assets/images/Github SVGRepo.svg';
+import linkedInIcon from '../assets/images/Linkedin brand icon.png';
 import instagramIcon from '../assets/images/Instagram brand icon.png';
 
 export function socialLinks() {
