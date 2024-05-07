@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg)$/i,
-        include: path.resolve(__dirname, 'src'),
+        // include: path.resolve(__dirname, 'src'),
         type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name][ext]',
