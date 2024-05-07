@@ -46,7 +46,7 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name].[ext]',
+          filename: 'assets/images/[name][ext]',
         },
       },
     ],
